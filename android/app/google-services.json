@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "722174512408",
+    "project_id": "fir-21312033",
+    "storage_bucket": "fir-21312033.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722174512408:android:b3a149f459bf3c2098e26d",
+        "android_client_info": {
+          "package_name": "com.if21a.latihan_get"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722174512408-ks7gr8lts5vms5h8e35bvg6q85fmp0fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmKWz39QixdVd8Zdi7tkI8l1_xnnyU8bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722174512408-ks7gr8lts5vms5h8e35bvg6q85fmp0fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
