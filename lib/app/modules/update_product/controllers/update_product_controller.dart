@@ -4,9 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class UpdateProductController extends GetxController {
+  late TextEditingController cNpm;
   late TextEditingController cNama;
-  late TextEditingController cHarga;
-
+  late TextEditingController cAlamat;
+  late TextEditingController cJk;
+  late TextEditingController cProgamStudi;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 Future<DocumentSnapshot<Object?>> getData(String id) async {
@@ -15,21 +17,30 @@ Future<DocumentSnapshot<Object?>> getData(String id) async {
   return docRef.get();
 }
 
-void updateProduct(String nama, String harga, String id) async {
+void updateProduct(String npm, String nama, String alamat, String jk, String progamstudi, String id) async {
   DocumentReference productById = firestore.collection("products").doc(id);
 
   try {
     await productById.update({
+      "npm": npm,
       "name": nama,
-      "price": harga,
+      "alamat":alamat,
+      "jenis kelamin":jk,
+      "progam studi": progamstudi,
     });
 
   Get.defaultDialog(
       title: "Berhasil",
-      middleText: "Berhasil Mengubah data Product.",
+      middleText: "Berhasil Mengubah data.",
       onConfirm: () {
+        cNpm.clear();
         cNama.clear();
-        cHarga.clear();
+        cAlamat.clear();
+        cJk.clear();
+        cProgamStudi.clear();
+        Get.back();
+        Get.back();
+        Get.back();
         Get.back();
         Get.back();
       },
@@ -39,22 +50,28 @@ void updateProduct(String nama, String harga, String id) async {
     print(e);
     Get.defaultDialog(
       title: "Terjadi Kesalahan",
-      middleText: "Gagal Menambahkan Product.",
+      middleText: "Gagal Menambahkan data.",
     );
   }
 }
 
   @override
   void onInit() {
-    cNama = TextEditingController();
-    cHarga = TextEditingController();
+    cAlamat.dispose();
+    cJk.dispose();
+    cNama.dispose();
+    cNpm.dispose();
+    cProgamStudi.dispose();
     super.onInit();
   }
 
   @override
   void onClose() {
+    cAlamat.dispose();
+    cJk.dispose();
     cNama.dispose();
-    cHarga.dispose();
+    cNpm.dispose();
+    cProgamStudi.dispose();
     super.onClose();
   }
 }

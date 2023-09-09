@@ -27,18 +27,57 @@ class AddProductView extends GetView<AddProductController> {
               height: 10,
             ),
             TextField(
-              controller: controller.cHarga,
+              controller: controller.cNpm,
               textInputAction: TextInputAction.done,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: "Harga Produk"),
+              decoration: InputDecoration(labelText: "Npm"),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: controller.cAlamat,
+              autocorrect: false,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(labelText: "Alamat"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: controller.cNama,
+              autocorrect: false,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(labelText: "Nama"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: controller.cJk,
+              autocorrect: false,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(labelText: "Jenis Kelamin"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: controller.cProgamStudi,
+              autocorrect: false,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(labelText: "Progam Studi"),
             ),
             SizedBox(
               height: 20,
             ),
             ElevatedButton(
               onPressed: () => controller.addProduct(
+                controller.cNpm.text,
                 controller.cNama.text,
-                controller.cHarga.text,
+                controller.cAlamat.text,
+                controller.cJk.text,
+                controller.cProgamStudi.text,
               ), 
               child: Text("Simpan")),
           ],

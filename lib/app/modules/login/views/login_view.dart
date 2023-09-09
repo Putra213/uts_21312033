@@ -56,7 +56,6 @@ class LoginView extends GetView<LoginController> {
             SizedBox(
               height: 10,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -65,6 +64,17 @@ class LoginView extends GetView<LoginController> {
                   onPressed: ()=> Get.toNamed(Routes.SIGNUP), 
                   child: Text("Daftar Disini"),),
               ],
+            ),
+            SizedBox(
+               height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () => cAuth.LoginGoogle(), 
+              child: Text("Login With Goggle"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+              ),
             ),
           ],
         ),
